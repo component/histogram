@@ -126,7 +126,7 @@ Histogram.prototype.smoothData = function(data, i){
   var k = this._smooth / 2;
   var d = data[i];
   for (var j = 0; j < k; j++) d += data[i - j] || 0;
-  for (var j = 0; j < k; j++) d += data[i - j] || 0;
+  for (var j = 0; j < k; j++) d += data[i + j] || 0;
   return d / (k * 2 + 1);
 };
 

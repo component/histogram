@@ -9,6 +9,49 @@
 
     $ component install component/histogram
 
+## Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Histogram</title>
+  <style>
+    body {
+    .histogram {
+      background: #1a1a1a;
+      opacity: .4;
+    }
+    .histogram .red {
+      color: #dc1e1a;
+    }
+    .histogram .green {
+      color: #12b81c;
+    }
+    .histogram .blue {
+      color: #46a3d6;
+    }
+  </style>
+</head>
+<body>
+  <canvas width=200 height=120></canvas>
+  <script src="build/build.js"></script>
+
+  <script>
+    var histogram = require('histogram');
+    var canvas = document.querySelector('canvas');
+
+    var img = document.createElement('img');
+    img.src = 'your img here';
+
+    histogram(img)
+      .smooth(12)
+      .draw(canvas);
+  </script>
+</body>
+</html>
+```
+
 ## Styling
 
   By default the histogram will be completely black,

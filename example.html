@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Histogram</title>
+  <style>
+    body {
+      padding: 50px;
+    }
+    img {
+      float: left;
+      clear: both;
+    }
+    canvas {
+      margin: 10px 0;
+      margin-bottom: 100px;
+      float: left;
+      clear: both;
+    }
+    .histogram {
+      background: #1a1a1a;
+      opacity: .4;
+    }
+    .histogram .red {
+      color: #dc1e1a;
+    }
+    .histogram .green {
+      color: #12b81c;
+    }
+    .histogram .blue {
+      color: #46a3d6;
+    }
+  </style>
+</head>
+<body>
+  <script src="build/build.js"></script>
+
+  <script>
+    var histogram = require('histogram');
+    var autoscale = require('component-autoscale-canvas');
+
+    function display(img){
+      var canvas = document.createElement('canvas');
+      canvas.width = 400;
+      canvas.height = 100;
+      autoscale(canvas);
+      var start = new Date;
+      histogram(img).smooth().draw(canvas);
+      console.log('%dms', new Date - start);
+      document.body.appendChild(img);
+      document.body.appendChild(canvas);
+    }
+
+    function graph(src, fn) {
+      var img = document.createElement('img');
+      img.style.width = '400px';
+      img.onload = function(){ fn(img) }
+      img.src = src;
+    }
+
+    graph('images/beach.jpg', display)
+    graph('images/forest.jpg', display)
+    graph('images/luna.jpg', display)
+  </script>
+</body>
+</html>

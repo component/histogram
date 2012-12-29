@@ -1,0 +1,17 @@
+{
+  "name": "histogram",
+  "repo": "component/histogram",
+  "description": "Image histograms",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/max": "*",
+    "component/autoscale-canvas": "*",
+    "component/style": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

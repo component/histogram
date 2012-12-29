@@ -9,6 +9,10 @@
 
     $ component install component/histogram
 
+  Or use without component:
+
+    $ component build --standalone histogram
+
 ## Example
 
 ```html

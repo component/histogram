@@ -17,7 +17,6 @@
 <head>
   <title>Histogram</title>
   <style>
-    body {
     .histogram {
       background: #1a1a1a;
       opacity: .4;

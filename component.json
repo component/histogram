@@ -3,7 +3,7 @@
   "repo": "component/histogram",
   "description": "Image histograms",
   "version": "0.0.1",
-  "keywords": [],
+  "keywords": ["histogram", "graph", "image", "canvas"],
   "dependencies": {
     "component/max": "*",
     "component/autoscale-canvas": "*",

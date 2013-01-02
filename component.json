@@ -2,7 +2,7 @@
   "name": "histogram",
   "repo": "component/histogram",
   "description": "Image histograms",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["histogram", "graph", "image", "canvas"],
   "dependencies": {
     "component/max": "*",

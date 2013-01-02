@@ -1,0 +1,19 @@
+{
+  "name": "histogram-component",
+  "description": "Image histograms",
+  "version": "0.0.1",
+  "keywords": ["histogram", "graph", "image", "canvas"],
+  "dependencies": {
+    "max-component": "*",
+    "autoscale-canvas": "*",
+    "style-component": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "component": {
+    "scripts": {
+      "histogram/index.js": "index.js"
+    },
+    "styles": ["test.css"]
+  }
+}

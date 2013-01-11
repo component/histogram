@@ -24,7 +24,7 @@ function Histogram(img) {
   if (!(this instanceof Histogram)) return new Histogram(img);
   this.img = img;
   this.bg = style('.histogram', 'background-color');
-  this.opacity = style('.histogram', 'opacity');
+  this.opacity = style('.histogram .channel', 'opacity');
   this.rcolor = style('.histogram .red', 'color');
   this.gcolor = style('.histogram .green', 'color');
   this.bcolor = style('.histogram .blue', 'color');

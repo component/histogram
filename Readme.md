@@ -23,6 +23,8 @@
   <style>
     .histogram {
       background: #1a1a1a;
+    }
+    .histogram .channel {
       opacity: .4;
     }
     .histogram .red {
@@ -66,7 +68,7 @@
   for example the following CSS:
 
 ```css
-.histogram {
+.histogram .channel {
   opacity: .4;
 }
 .histogram .red {
@@ -89,6 +91,8 @@
 ```css
 .histogram {
   background: #1a1a1a;
+}
+.histogram .channel {
   opacity: .4;
 }
 .histogram .red {

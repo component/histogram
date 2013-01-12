@@ -140,6 +140,7 @@ Histogram.prototype.smoothData = function(data, i){
 Histogram.prototype.histogram = function(){
   var id = this.imageData();
   var pixels = id.data;
+  var sensivity = 10000;
 
   var ret = {};
   ret.r = new Array(256);
@@ -158,9 +159,9 @@ Histogram.prototype.histogram = function(){
     var r = pixels[i];
     var g = pixels[i + 1];
     var b = pixels[i + 2];
-    ret.r[r]++;
-    ret.g[g]++;
-    ret.b[b]++;
+    if (ret.r[r] < sensivity) ret.r[r]++;
+    if (ret.g[g] < sensivity) ret.g[g]++;
+    if (ret.b[b] < sensivity) ret.b[b]++;
   }
 
   return ret;

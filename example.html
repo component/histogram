@@ -4,7 +4,8 @@
   <title>Histogram</title>
   <style>
     body {
-      padding: 50px;
+      padding: 100px;
+      font: 12px Helvetica, Arial;
     }
     img {
       float: left;
@@ -31,14 +32,45 @@
     .histogram .blue {
       color: #46a3d6;
     }
+    #drop {
+      width: 300px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      border: 1px dashed #ddd;
+      margin-bottom: 80px;
+    }
+    #drop.over {
+      border-color: black;
+    }
+    img {
+      width: 400px;
+    }
   </style>
 </head>
 <body>
   <script src="build/build.js"></script>
 
+  <div id="drop">Drag and drop image(s)</div>
+
   <script>
+    var Dropload = require('component-dropload');
+    var File = require('component-file');
     var histogram = require('histogram');
     var autoscale = require('component-autoscale-canvas');
+
+    var drop = new Dropload(document.querySelector('#drop'));
+
+    drop.on('upload', function(upload){
+      var file = File(upload.file);
+      file.toDataURL(function(err, uri){
+        var img = new Image;
+        img.src = uri;
+        img.onload = function(){
+          display(img);
+        };
+      })
+    });
 
     function display(img){
       var canvas = document.createElement('canvas');
@@ -58,16 +90,6 @@
       img.onload = function(){ fn(img) }
       img.src = src;
     }
-
-    graph('images/beach.jpg', display)
-    graph('images/forest.jpg', display)
-    graph('images/luna.jpg', display)
-    graph('images/bee.jpg', display)
-    graph('images/simon.png', display)
-    graph('images/simon-2.png', display)
-    graph('images/butterfly-1.png', display)
-    graph('images/butterfly-2.png', display)
-    graph('images/ducks.jpg', display)
   </script>
 </body>
 </html>

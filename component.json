@@ -9,7 +9,10 @@
     "component/autoscale-canvas": "*",
     "component/style": "*"
   },
-  "development": {},
+  "development": {
+    "component/file": "*",
+    "component/dropload": "*"
+  },
   "license": "MIT",
   "scripts": [
     "index.js"

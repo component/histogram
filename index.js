@@ -24,6 +24,7 @@ function Histogram(img) {
   if (!(this instanceof Histogram)) return new Histogram(img);
   this.img = img;
   this.bg = style('.histogram', 'background-color');
+  this.borderColor = style('.histogram', 'border-color');
   this.opacity = style('.histogram .channel', 'opacity');
   this.rcolor = style('.histogram .red', 'color');
   this.gcolor = style('.histogram .green', 'color');
@@ -85,6 +86,16 @@ Histogram.prototype.draw = function(canvas){
 
   ctx.fillStyle = ctx.strokeStyle = this.bcolor;
   this.drawColor(ctx, data.b, m);
+
+  if (!this.borderColor) return;
+
+  ctx.strokeStyle = this.borderColor;
+  ctx.beginPath();
+  ctx.moveTo(0, h - 15);
+  ctx.lineTo(0, h);
+  ctx.lineTo(w, h);
+  ctx.lineTo(w, h - 15);
+  ctx.stroke();
 };
 
 /**

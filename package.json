@@ -1,7 +1,7 @@
 {
   "name": "histogram-component",
   "description": "Image histograms",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "keywords": ["histogram", "graph", "image", "canvas"],
   "dependencies": {
     "max-component": "*",

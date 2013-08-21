@@ -2,7 +2,12 @@
   "name": "histogram-component",
   "description": "Image histograms",
   "version": "0.3.0",
-  "keywords": ["histogram", "graph", "image", "canvas"],
+  "keywords": [
+    "histogram",
+    "graph",
+    "image",
+    "canvas"
+  ],
   "dependencies": {
     "max-component": "*",
     "autoscale-canvas": "*",
@@ -14,5 +19,9 @@
     "scripts": {
       "histogram/index.js": "index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/histogram.git"
   }
 }
